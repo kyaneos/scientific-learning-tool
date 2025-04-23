@@ -47,6 +47,12 @@
                         <a class="nav-link" href="{{ url_for('progress') }}">My Progress</a>
                     </li>
                     {% endif %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('about') }}">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('references') }}">References</a>
+                    </li>
                 </ul>
                 <ul class="navbar-nav ms-auto">
                     {% if current_user.is_authenticated %}
@@ -103,11 +109,11 @@
                 </div>
                 <div class="col-md-6 text-md-end">
                     <p>
-                        <a href="#" class="text-light me-3"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="text-light me-3"><i class="fab fa-github"></i></a>
-                        <a href="#" class="text-light"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/kyaneos" class="text-light me-3" data-bs-toggle="tooltip" title="Visit Kyaneos on GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://github.com/philip-johnson36" class="text-light me-3" data-bs-toggle="tooltip" title="Visit Philip Johnson on GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/thisisjustinmoran/" class="text-light" data-bs-toggle="tooltip" title="Visit Justin Moran on LinkedIn"><i class="fab fa-linkedin"></i></a>
                     </p>
-                    <p class="small">&copy; 2023 Scientific Method Learning Tool</p>
+                    <p class="small">&copy; 2025 Scientific Method Learning Tool</p>
                 </div>
             </div>
         </div>
