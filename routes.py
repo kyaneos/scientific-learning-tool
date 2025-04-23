@@ -29,8 +29,8 @@ def load_data(filename):
 # Routes
 @app.route('/')
 def home():
-    lessons = load_data('lessons.json')
-    return render_template('home.html', lessons=lessons)
+    courses = load_data('courses.json')
+    return render_template('home.html', courses=courses)
 
 @app.route('/lesson/<int:lesson_id>')
 def lesson(lesson_id):
@@ -192,3 +192,20 @@ def about():
 @app.route('/references')
 def references():
     return render_template('references.html')
+
+@app.route('/course/<int:course_id>')
+def course(course_id):
+    courses = load_data('courses.json')
+    current_course = next((c for c in courses if c['id'] == course_id), None)
+    
+    if not current_course:
+        flash('Course not found!', 'danger')
+        return redirect(url_for('home'))
+    
+    # Load all lessons
+    all_lessons = load_data('lessons.json')
+    
+    # Filter lessons for this course
+    course_lessons = [l for l in all_lessons if l['id'] in current_course.get('lessons', [])]
+    
+    return render_template('course.html', course=current_course, lessons=course_lessons)
