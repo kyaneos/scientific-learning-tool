@@ -10,6 +10,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const resultsContainer = document.getElementById('quiz-results');
     const retryButton = document.getElementById('retry-quiz');
     
+    // Check if we have completed parameter in URL (for browser refresh case)
+    const urlParams = new URLSearchParams(window.location.search);
+    const quizCompleted = urlParams.get('completed') === 'true';
+    
     // If we're on a quiz page
     if (quizForm && quizId) {
         // Load quiz data from the HTML (this would be provided by the Flask template)
@@ -30,8 +34,28 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         
-        // Render the quiz
-        renderQuiz(quizData);
+        // Check if we should show results immediately (page was refreshed after completion)
+        if (quizCompleted) {
+            // Show results container and hide form
+            quizForm.style.display = 'none';
+            resultsContainer.style.display = 'block';
+            
+            // Add message about previously completed quiz
+            const message = document.createElement('div');
+            message.className = 'alert alert-info mb-4';
+            message.innerHTML = `
+                <i class="fas fa-info-circle me-2"></i>
+                You've already completed this quiz. Your previous results are shown below.
+                You can retry the quiz using the button below if you'd like to improve your score.
+            `;
+            
+            // Add message to top of results
+            const resultsCardBody = resultsContainer.querySelector('.card-body');
+            resultsCardBody.insertBefore(message, resultsCardBody.firstChild);
+        } else {
+            // Render the quiz as normal
+            renderQuiz(quizData);
+        }
         
         // Quiz submission handler
         quizForm.addEventListener('submit', function(e) {
@@ -42,8 +66,15 @@ document.addEventListener('DOMContentLoaded', function() {
         // Retry quiz handler
         if (retryButton) {
             retryButton.addEventListener('click', function() {
+                // Remove the completed parameter from URL
+                const newUrl = window.location.pathname;
+                history.pushState({}, document.title, newUrl);
+                
+                // Hide results and show form
                 resultsContainer.style.display = 'none';
                 quizForm.style.display = 'block';
+                
+                // Re-render quiz
                 renderQuiz(quizData);
             });
         }
@@ -326,9 +357,45 @@ function saveQuizResults(quizId, answers, score) {
     .then(response => response.json())
     .then(data => {
         console.log('Success:', data);
+        
+        // Add success message if not already shown
+        const resultsContainer = document.getElementById('quiz-results');
+        if (!document.getElementById('save-success-message')) {
+            const successAlert = document.createElement('div');
+            successAlert.id = 'save-success-message';
+            successAlert.className = 'alert alert-success mt-3';
+            successAlert.innerHTML = `
+                <i class="fas fa-check-circle me-2"></i>
+                Your quiz results have been saved successfully!
+            `;
+            
+            // Insert before the buttons section
+            const feedbackSection = document.getElementById('question-feedback');
+            if (feedbackSection) {
+                feedbackSection.parentNode.insertBefore(successAlert, feedbackSection.nextSibling);
+            } else {
+                resultsContainer.querySelector('.card-body').appendChild(successAlert);
+            }
+        }
+        
+        // Update URL with query parameter to prevent form reset on refresh
+        const urlParams = new URLSearchParams(window.location.search);
+        if (!urlParams.has('completed')) {
+            const newUrl = `${window.location.pathname}?completed=true`;
+            history.pushState({completed: true}, document.title, newUrl);
+        }
     })
     .catch(error => {
         console.error('Error saving quiz results:', error);
+        // Show error message
+        const resultsContainer = document.getElementById('quiz-results');
+        const errorAlert = document.createElement('div');
+        errorAlert.className = 'alert alert-danger mt-3';
+        errorAlert.innerHTML = `
+            <i class="fas fa-exclamation-circle me-2"></i>
+            There was an error saving your quiz results. Please try again.
+        `;
+        resultsContainer.querySelector('.card-body').appendChild(errorAlert);
     });
 }
 
