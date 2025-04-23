@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <title>Scientific Learning Tool{% block title %}{% endblock %}</title>
     <!-- Bootstrap 5 CSS (Replit Dark Theme) -->
     <link rel="stylesheet" href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css">
@@ -17,7 +20,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
         <div class="container">
             <a class="navbar-brand" href="{{ url_for('home') }}">
-                <img src="{{ url_for('static', filename='svg/brain_logo.svg') }}" alt="Brain Logo" style="height: 30px; margin-right: 8px;"> Scientific Learning Tool
+                <img src="{{ url_for('static', filename='svg/brain_logo_side.svg') }}?v=2" alt="Brain Logo" style="height: 30px; margin-right: 8px;"> Scientific Learning Tool
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -123,7 +126,20 @@
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- Main JS -->
-    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}?v=1"></script>
+    <!-- Prevent caching -->
+    <script>
+        // Add cache-busting parameters to all links
+        document.addEventListener('DOMContentLoaded', function() {
+            const timestamp = new Date().getTime();
+            const links = document.querySelectorAll('a[href]');
+            links.forEach(link => {
+                if (link.href.includes(window.location.hostname)) {
+                    link.href = link.href + (link.href.includes('?') ? '&' : '?') + 'nocache=' + timestamp;
+                }
+            });
+        });
+    </script>
     {% block extra_js %}{% endblock %}
 </body>
 </html>
