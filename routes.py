@@ -109,11 +109,24 @@ def progress():
     
     # Get user progress
     user_progress = Progress.query.filter_by(user_id=current_user.id).all()
-    progress_dict = {p.lesson_id: p for p in user_progress}
+    # Convert Progress objects to serializable dict
+    progress_dict = {p.lesson_id: {
+        'id': p.id,
+        'lesson_id': p.lesson_id,
+        'completed': p.completed,
+        'last_accessed': p.last_accessed.isoformat() if p.last_accessed else None
+    } for p in user_progress}
     
     # Get quiz results
     quiz_results = QuizResult.query.filter_by(user_id=current_user.id).all()
-    quiz_dict = {r.quiz_id: r for r in quiz_results}
+    # Convert QuizResult objects to serializable dict
+    quiz_dict = {r.quiz_id: {
+        'id': r.id,
+        'quiz_id': r.quiz_id,
+        'score': r.score,
+        'answers': r.get_answers(),
+        'completed_at': r.completed_at.isoformat() if r.completed_at else None
+    } for r in quiz_results}
     
     return render_template('progress.html', 
                          lessons=lessons, 

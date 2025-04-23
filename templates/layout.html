@@ -28,6 +28,20 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url_for('home') }}">Home</a>
                     </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="lessonsDropdown" role="button" 
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            Lessons
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="lessonsDropdown">
+                            <li><a class="dropdown-item" href="{{ url_for('lesson', lesson_id=1) }}">Introduction to the Scientific Method</a></li>
+                            <li><a class="dropdown-item" href="{{ url_for('lesson', lesson_id=2) }}">Observation and Questioning</a></li>
+                            <li><a class="dropdown-item" href="{{ url_for('lesson', lesson_id=3) }}">Forming Hypotheses</a></li>
+                            <li><a class="dropdown-item" href="{{ url_for('lesson', lesson_id=4) }}">Experimental Design</a></li>
+                            <li><a class="dropdown-item" href="{{ url_for('lesson', lesson_id=5) }}">Analysis and Interpretation</a></li>
+                            <li><a class="dropdown-item" href="{{ url_for('lesson', lesson_id=6) }}">Drawing Conclusions</a></li>
+                        </ul>
+                    </li>
                     {% if current_user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url_for('progress') }}">My Progress</a>
