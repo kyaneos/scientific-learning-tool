@@ -2,6 +2,7 @@
 	import type { Course } from '$lib/utils/data';
 	import { auth } from '$lib/stores/auth.svelte';
 	import { pb } from '$lib/pocketbase';
+	import { base } from '$app/paths';
 	import { onMount } from 'svelte';
 
 	let { course }: { course: Course } = $props();
@@ -32,7 +33,7 @@
 
 <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow h-full">
 	<figure class="px-10 pt-10">
-		<img src="/svg/{course.image}" alt={course.title} class="rounded-xl h-32" />
+		<img src="{base}/svg/{course.image}" alt={course.title} class="rounded-xl h-32" />
 	</figure>
 	<div class="card-body">
 		<h2 class="card-title">{course.title}</h2>
@@ -49,7 +50,7 @@
 		{/if}
 
 		<div class="card-actions justify-end mt-4">
-			<a href="/course/{course.id}" class="btn btn-primary">
+			<a href="{base}/course/{course.id}" class="btn btn-primary">
 				View Course
 				<svg
 					xmlns="http://www.w3.org/2000/svg"

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
+	import { base } from '$app/paths';
 	import { auth } from '$lib/stores/auth.svelte';
 	import Alert from '$lib/components/Alert.svelte';
 
@@ -38,7 +39,7 @@
 			await auth.login(email, password);
 
 			// Use full page reload to ensure server-side hooks can read the auth cookie
-			window.location.href = '/';
+			window.location.href = `${base}/`;
 		} catch (err: any) {
 			console.error('Registration error:', err);
 			if (err.data?.data) {

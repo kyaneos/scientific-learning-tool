@@ -468,6 +468,38 @@ PUBLIC_BASE_PATH=  # Set for GitHub Pages if using repo name in URL
 
 ---
 
+## Recent Updates
+
+### October 25, 2025 - Repository Setup & CI/CD Configuration
+**Status**: ✅ COMPLETE
+
+**Changes Made**:
+- ✅ Set up ESLint with TypeScript and Svelte support
+  - Created `eslint.config.js` with flat config format
+  - Added eslint, eslint-plugin-svelte, typescript-eslint packages
+  - Configured to lint `.ts`, `.js`, and `.svelte` files
+- ✅ Set up Prettier with Svelte plugin
+  - Created `.prettierrc` with project formatting rules
+  - Added `.prettierignore` to exclude build artifacts
+  - Added prettier and prettier-plugin-svelte packages
+- ✅ Added npm scripts for code quality
+  - `npm run lint` - Run ESLint checks
+  - `npm run format` - Auto-format code with Prettier
+- ✅ Enhanced GitHub Actions CI/CD pipeline
+  - Updated `.github/workflows/deploy.yml` to run linting before build
+  - Ensures code quality checks on every push to main
+- ✅ Initialized Git repository and pushed to GitHub
+  - Added remote: `https://github.com/kyaneos/scientific-learning-tool.git`
+  - Pushed all code to main branch
+  - GitHub Actions workflow ready for deployment
+
+**Next Actions**:
+1. Run `npm install` to install new linting dependencies
+2. Enable GitHub Pages in repository settings (Settings → Pages → Source: GitHub Actions)
+3. Test GitHub Actions deployment workflow
+
+---
+
 ## References
 
 - [SvelteKit Documentation](https://kit.svelte.dev/)

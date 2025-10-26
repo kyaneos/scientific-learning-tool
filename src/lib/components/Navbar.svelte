@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import { base } from '$app/paths';
 	import { auth } from '$lib/stores/auth.svelte';
 </script>
 
@@ -26,45 +27,45 @@
 				tabindex="0"
 				class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
 			>
-				<li><a href="/">Home</a></li>
+				<li><a href="{base}/">Home</a></li>
 				<li>
 					<details>
 						<summary>Courses</summary>
 						<ul class="p-2">
-							<li><a href="/course/1">Scientific Method</a></li>
-							<li><a href="/course/2">Research Methods in Psychology</a></li>
-							<li><a href="/course/3">Introduction to Cognitive Psychology</a></li>
+							<li><a href="{base}/course/1">Scientific Method</a></li>
+							<li><a href="{base}/course/2">Research Methods in Psychology</a></li>
+							<li><a href="{base}/course/3">Introduction to Cognitive Psychology</a></li>
 						</ul>
 					</details>
 				</li>
 				{#if auth.isAuthenticated}
-					<li><a href="/progress">My Progress</a></li>
+					<li><a href="{base}/progress">My Progress</a></li>
 				{/if}
-				<li><a href="/about">About</a></li>
-				<li><a href="/references">References</a></li>
+				<li><a href="{base}/about">About</a></li>
+				<li><a href="{base}/references">References</a></li>
 			</ul>
 		</div>
-		<a href="/" class="btn btn-ghost text-xl">
-			<img src="/svg/brain_logo_side.svg" alt="Brain Logo" class="h-8 w-8" />
+		<a href="{base}/" class="btn btn-ghost text-xl">
+			<img src="{base}/svg/brain_logo_side.svg" alt="Brain Logo" class="h-8 w-8" />
 			Scientific Learning Tool
 		</a>
 	</div>
 	<div class="navbar-center hidden lg:flex">
 		<ul class="menu menu-horizontal px-1">
-			<li><a href="/">Home</a></li>
+			<li><a href="{base}/">Home</a></li>
 			<li class="dropdown dropdown-hover">
 				<div tabindex="0" role="button" class="btn btn-ghost">Courses</div>
 				<ul class="dropdown-content menu bg-base-100 rounded-box z-[1] p-2 shadow w-64">
-					<li><a href="/course/1">Scientific Method</a></li>
-					<li><a href="/course/2">Research Methods in Psychology</a></li>
-					<li><a href="/course/3">Introduction to Cognitive Psychology</a></li>
+					<li><a href="{base}/course/1">Scientific Method</a></li>
+					<li><a href="{base}/course/2">Research Methods in Psychology</a></li>
+					<li><a href="{base}/course/3">Introduction to Cognitive Psychology</a></li>
 				</ul>
 			</li>
 			{#if auth.isAuthenticated}
-				<li><a href="/progress">My Progress</a></li>
+				<li><a href="{base}/progress">My Progress</a></li>
 			{/if}
-			<li><a href="/about">About</a></li>
-			<li><a href="/references">References</a></li>
+			<li><a href="{base}/about">About</a></li>
+			<li><a href="{base}/references">References</a></li>
 		</ul>
 	</div>
 	<div class="navbar-end">
@@ -82,14 +83,14 @@
 					<li class="menu-title">
 						<span>{auth.user?.username}</span>
 					</li>
-					<li><a href="/progress">My Progress</a></li>
+					<li><a href="{base}/progress">My Progress</a></li>
 					<li>
 						<button
 							type="button"
 							class="w-full text-left"
 							onclick={() => {
 								auth.logout();
-								window.location.href = '/';
+								window.location.href = `${base}/`;
 							}}
 						>
 							Logout
@@ -98,8 +99,8 @@
 				</ul>
 			</div>
 		{:else}
-			<a href="/login" class="btn btn-ghost">Login</a>
-			<a href="/register" class="btn btn-primary">Register</a>
+			<a href="{base}/login" class="btn btn-ghost">Login</a>
+			<a href="{base}/register" class="btn btn-primary">Register</a>
 		{/if}
 	</div>
 </div>
