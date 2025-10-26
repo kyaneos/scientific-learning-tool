@@ -1129,7 +1129,7 @@
     "title": "Drawing Conclusions and Communicating Results Quiz",
     "description": "Test your understanding of scientific conclusions and communication. This quiz covers how to interpret findings, recognize limitations, and effectively share scientific results.",
     "lesson_id": 6,
-    "next_lesson_id": null,
+    "next_lesson_id": 7,
     "questions": [
       {
         "id": 601,
@@ -1346,6 +1346,231 @@
           }
         ],
         "explanation": "The scientific method is not a one-way linear process but a cycle. Conclusions from one study lead to new observations, questions, and hypotheses, which are then investigated in turn. This iterative process allows knowledge to build upon itself over time, with each cycle potentially refining, extending, or sometimes revising previous understanding."
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "title": "The Science of Psychology Quiz",
+    "description": "Test your understanding of what makes psychology a science, how it differs from pseudoscience and common sense, and the importance of empirical research.",
+    "lesson_id": 7,
+    "next_lesson_id": null,
+    "questions": [
+      {
+        "id": 701,
+        "text": "Which of the following is NOT one of the three fundamental features of science?",
+        "answers": [
+          {
+            "id": 1,
+            "text": "Systematic empiricism",
+            "correct": false
+          },
+          {
+            "id": 2,
+            "text": "Empirical questions",
+            "correct": false
+          },
+          {
+            "id": 3,
+            "text": "Reliance on authority",
+            "correct": true
+          },
+          {
+            "id": 4,
+            "text": "Public knowledge",
+            "correct": false
+          }
+        ],
+        "explanation": "The three fundamental features of science are systematic empiricism (careful, planned observations), empirical questions (testable questions about how the world is), and public knowledge (published findings). Science does not rely on authority—it relies on evidence and observation."
+      },
+      {
+        "id": 702,
+        "text": "In the study by Mehl and colleagues about talkativeness, women spoke an average of 16,215 words per day and men spoke 15,669. What does this finding demonstrate?",
+        "answers": [
+          {
+            "id": 1,
+            "text": "Women are significantly more talkative than men",
+            "correct": false
+          },
+          {
+            "id": 2,
+            "text": "Systematic observation can contradict popular stereotypes",
+            "correct": true
+          },
+          {
+            "id": 3,
+            "text": "Men are more talkative than women",
+            "correct": false
+          },
+          {
+            "id": 4,
+            "text": "Audio recorders are unreliable research tools",
+            "correct": false
+          }
+        ],
+        "explanation": "The tiny difference between women and men (546 words) could easily be explained by chance, contradicting the popular stereotype that women talk much more than men. This demonstrates how systematic empirical observation can reveal that widely held beliefs are unfounded."
+      },
+      {
+        "id": 703,
+        "text": "What makes a scientific claim falsifiable?",
+        "answers": [
+          {
+            "id": 1,
+            "text": "It must be proven true by at least three independent studies",
+            "correct": false
+          },
+          {
+            "id": 2,
+            "text": "There must be possible observations that could count as evidence against it",
+            "correct": true
+          },
+          {
+            "id": 3,
+            "text": "It must be approved by a scientific authority",
+            "correct": false
+          },
+          {
+            "id": 4,
+            "text": "It must be simple enough for non-scientists to understand",
+            "correct": false
+          }
+        ],
+        "explanation": "Philosopher Karl Popper argued that scientific claims must be falsifiable—there must be possible observations that would count as evidence against the claim. This distinguishes science from pseudoscience, where claims are often constructed so no observation could disprove them."
+      },
+      {
+        "id": 704,
+        "text": "Why do some ESP researchers' claims about psychic powers disappearing under observation make ESP unfalsifiable?",
+        "answers": [
+          {
+            "id": 1,
+            "text": "Because the powers might actually exist but can't be tested",
+            "correct": false
+          },
+          {
+            "id": 2,
+            "text": "Because both success and failure can be explained as supporting ESP",
+            "correct": true
+          },
+          {
+            "id": 3,
+            "text": "Because observation equipment interferes with psychic energy",
+            "correct": false
+          },
+          {
+            "id": 4,
+            "text": "Because psychic powers are too complex to study scientifically",
+            "correct": false
+          }
+        ],
+        "explanation": "If successful predictions confirm ESP, and failed predictions are explained by powers disappearing under observation, then no possible observation could count as evidence against ESP. This makes it unfalsifiable and therefore not scientific."
+      },
+      {
+        "id": 705,
+        "text": "What is confirmation bias?",
+        "answers": [
+          {
+            "id": 1,
+            "text": "The tendency to design experiments that will confirm hypotheses",
+            "correct": false
+          },
+          {
+            "id": 2,
+            "text": "The requirement that studies be confirmed by peer review before publication",
+            "correct": false
+          },
+          {
+            "id": 3,
+            "text": "The tendency to notice and remember evidence that confirms our existing beliefs",
+            "correct": true
+          },
+          {
+            "id": 4,
+            "text": "The bias toward publishing only studies with positive results",
+            "correct": false
+          }
+        ],
+        "explanation": "Confirmation bias is the tendency to focus on and remember cases that confirm our existing beliefs while ignoring or forgetting cases that contradict them. For example, once we believe women are more talkative, we tend to notice talkative women and silent men but ignore silent women and talkative men."
+      },
+      {
+        "id": 706,
+        "text": "Which of the following popular beliefs has been shown by scientific research to be FALSE?",
+        "answers": [
+          {
+            "id": 1,
+            "text": "Matching teaching styles to learning styles improves outcomes",
+            "correct": true
+          },
+          {
+            "id": 2,
+            "text": "Practice improves performance",
+            "correct": false
+          },
+          {
+            "id": 3,
+            "text": "Sleep is important for memory consolidation",
+            "correct": false
+          },
+          {
+            "id": 4,
+            "text": "Stress can affect physical health",
+            "correct": false
+          }
+        ],
+        "explanation": "Despite being widely believed, scientific research has shown that matching teaching styles to students' preferred learning styles does not improve learning outcomes. This is one of many examples where folk psychology contradicts scientific evidence."
+      },
+      {
+        "id": 707,
+        "text": "What distinguishes basic research from applied research in psychology?",
+        "answers": [
+          {
+            "id": 1,
+            "text": "Basic research is simpler and requires less training",
+            "correct": false
+          },
+          {
+            "id": 2,
+            "text": "Basic research seeks understanding while applied research addresses practical problems",
+            "correct": true
+          },
+          {
+            "id": 3,
+            "text": "Only applied research is published in scientific journals",
+            "correct": false
+          },
+          {
+            "id": 4,
+            "text": "Basic research doesn't use the scientific method",
+            "correct": false
+          }
+        ],
+        "explanation": "Basic research is conducted primarily to achieve detailed understanding of human behavior without necessarily addressing a practical problem. Applied research is conducted primarily to solve specific practical problems. Both are valuable and both use the scientific method."
+      },
+      {
+        "id": 708,
+        "text": "What is an empirically supported treatment?",
+        "answers": [
+          {
+            "id": 1,
+            "text": "Any treatment recommended by licensed clinicians",
+            "correct": false
+          },
+          {
+            "id": 2,
+            "text": "A treatment shown by research to work better than no treatment, placebo, or alternatives",
+            "correct": true
+          },
+          {
+            "id": 3,
+            "text": "A treatment based on theoretical understanding of disorders",
+            "correct": false
+          },
+          {
+            "id": 4,
+            "text": "A treatment that has been used for at least 10 years",
+            "correct": false
+          }
+        ],
+        "explanation": "Empirically supported treatments are those that have been studied scientifically and shown to result in greater improvement than no treatment, placebo, or alternative treatments. Examples include cognitive behavioral therapy for depression and exposure therapy for PTSD."
       }
     ]
   }

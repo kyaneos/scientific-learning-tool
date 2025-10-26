@@ -446,5 +446,124 @@
       "description": "Practice drawing valid conclusions from different research scenarios and data sets.",
       "image": "conclusion.svg"
     }
+  },
+  {
+    "id": 7,
+    "title": "The Science of Psychology",
+    "summary": "Understand what makes psychology a science and how it differs from pseudoscience and common sense.",
+    "intro": "Psychology is the scientific study of human behavior and mental processes. This lesson explores the three fundamental features that make psychology a science, why scientific research matters, and how it differs from folk psychology and pseudoscience.",
+    "image": "experiment.svg",
+    "quiz_id": 7,
+    "sections": [
+      {
+        "title": "What Makes Psychology a Science?",
+        "content": "Psychology shares the same general approach as astronomy, biology, and chemistry—not in subject matter or equipment, but in how it understands the natural world. Science has three fundamental features: systematic empiricism (learning through careful, planned observations), empirical questions (questions about how the world actually is), and public knowledge (publishing findings for others to evaluate and build upon).",
+        "key_points": [
+          "Systematic empiricism: carefully planning, making, and recording observations",
+          "Empirical questions: testable questions about how the world actually is",
+          "Public knowledge: publishing research for evaluation and collaboration",
+          "Psychology applies these same features to study human behavior"
+        ],
+        "example": "Psychologist Matias Mehl tested the stereotype that women talk more than men. Rather than relying on intuition, he had 369 college students wear audio recorders. Result: women spoke 16,215 words/day, men spoke 15,669—a tiny difference easily explained by chance. This demonstrates systematic empiricism in action."
+      },
+      {
+        "title": "Science vs. Pseudoscience",
+        "content": "Pseudoscience refers to beliefs claimed to be scientific but lacking one or more features of science. For example, biorhythms theory claims physical, intellectual, and emotional cycles affect our abilities, but ignores contradicting scientific research. A key test: scientific claims must be falsifiable—there must be possible observations that could count as evidence against them.",
+        "key_points": [
+          "Pseudoscience claims to be scientific but lacks systematic empiricism, empirical questions, or public knowledge",
+          "Falsifiability: scientific claims must be testable and potentially disprovable",
+          "Examples of pseudoscience: biorhythms, astrology, graphology, unfalsifiable ESP claims",
+          "Learning about pseudoscience helps clarify what makes real science valuable"
+        ],
+        "example": "Some ESP researchers claim psychic powers disappear when observed too closely. This makes ESP unfalsifiable—if predictions succeed, it confirms ESP; if they fail, powers supposedly disappeared. No observation could disprove it, so it's not scientific."
+      },
+      {
+        "title": "Who Conducts Psychological Research?",
+        "content": "Scientific research in psychology is primarily conducted by people with doctoral (PhD) or master's degrees, often as college and university faculty collaborating with students. Most researchers are not clinicians but have expertise in specific subfields like cognitive, developmental, or social psychology. Research is conducted for government agencies, nonprofits, private sector companies, and academic institutions.",
+        "key_points": [
+          "Researchers typically have doctoral or master's degrees in psychology",
+          "Most work in academic settings but also in government, nonprofits, and private sector",
+          "Research is done to satisfy curiosity, advance knowledge, and solve practical problems",
+          "Basic research seeks understanding; applied research addresses specific problems"
+        ]
+      },
+      {
+        "title": "Science vs. Common Sense",
+        "content": "While folk psychology (our intuitive beliefs about behavior) is sometimes accurate, it's often wrong. Examples: 'letting out' anger makes it worse, not better; false confessions are surprisingly common; we don't use only 10% of our brains. We rely on mental shortcuts and confirmation bias (focusing on cases that confirm our beliefs). Scientists cultivate skepticism—pausing to consider alternatives and search for evidence—and tolerance for uncertainty.",
+        "key_points": [
+          "Folk psychology is often incorrect despite feeling intuitive",
+          "Confirmation bias: we notice and remember evidence that confirms our beliefs",
+          "Skepticism means searching for evidence before accepting claims",
+          "Tolerance for uncertainty: accepting what we don't yet know",
+          "Systematic observation reveals truths that contradict common sense"
+        ],
+        "example": "Most people believe low self-esteem causes psychological problems, psychiatric admissions increase during full moons, and matching teaching to learning styles improves outcomes. Scientific research has shown all three beliefs to be false."
+      },
+      {
+        "title": "Science and Clinical Practice",
+        "content": "Clinical psychology applies scientific research to help people with psychological disorders and problems. Questions about disorders, their causes, and treatment effectiveness are empirically testable. Empirically supported treatments are those shown through scientific research to work better than no treatment, placebo, or alternatives. Examples include cognitive behavioral therapy for depression and exposure therapy for PTSD.",
+        "key_points": [
+          "Clinical practice should be informed by scientific research",
+          "Treatment effectiveness is an empirical question",
+          "Empirically supported treatments have proven effectiveness through research",
+          "Examples: CBT for depression, exposure therapy for PTSD, behavioral therapy",
+          "Even clinicians who don't conduct research need scientific literacy"
+        ]
+      }
+    ],
+    "key_takeaways": [
+      "Psychology is a science because it uses systematic empiricism, addresses empirical questions, and creates public knowledge",
+      "Pseudoscience lacks one or more features of science and often makes unfalsifiable claims",
+      "Folk psychology and common sense are often wrong due to confirmation bias and mental shortcuts",
+      "Scientific research in psychology is conducted by trained researchers to advance knowledge and solve problems",
+      "Clinical practice should be grounded in empirically supported treatments validated by research"
+    ],
+    "connection_to_scientific_method": "This lesson establishes why psychology relies on the scientific method rather than intuition or common sense. The systematic approach to research prevents the biases and errors that plague folk psychology.",
+    "glossary": [
+      {
+        "term": "Systematic Empiricism",
+        "definition": "Learning about the natural world through careful, planned observations that are systematically recorded and analyzed."
+      },
+      {
+        "term": "Empirical Question",
+        "definition": "A question about the way the world actually is that can be answered by systematically observing it."
+      },
+      {
+        "term": "Public Knowledge",
+        "definition": "Scientific findings that are published and made available for evaluation, replication, and building upon by other researchers."
+      },
+      {
+        "term": "Pseudoscience",
+        "definition": "Activities and beliefs claimed to be scientific but lacking one or more of the three features of science."
+      },
+      {
+        "term": "Falsifiable",
+        "definition": "A property of scientific claims meaning there are possible observations that would count as evidence against the claim."
+      },
+      {
+        "term": "Folk Psychology",
+        "definition": "Intuitive beliefs people hold about human behavior, thoughts, and feelings that may or may not be accurate."
+      },
+      {
+        "term": "Confirmation Bias",
+        "definition": "The tendency to focus on and remember cases that confirm our existing beliefs while ignoring cases that contradict them."
+      },
+      {
+        "term": "Skepticism",
+        "definition": "A critical-thinking attitude involving pausing to consider alternatives and search for evidence before accepting claims."
+      },
+      {
+        "term": "Basic Research",
+        "definition": "Research conducted primarily to achieve detailed and accurate understanding without necessarily addressing a practical problem."
+      },
+      {
+        "term": "Applied Research",
+        "definition": "Research conducted primarily to address a specific practical problem."
+      },
+      {
+        "term": "Empirically Supported Treatment",
+        "definition": "A treatment shown by scientific research to result in greater improvement than no treatment, placebo, or alternative treatments."
+      }
+    ]
   }
 ]
