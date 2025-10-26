@@ -1,5 +1,18 @@
 import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
+import { readFileSync } from 'fs';
+
+// Dynamically load courses, lessons, and quizzes to generate prerender entries
+const courses = JSON.parse(readFileSync('static/data/courses.json', 'utf-8'));
+const lessons = JSON.parse(readFileSync('static/data/lessons.json', 'utf-8'));
+const quizzes = JSON.parse(readFileSync('static/data/quizzes.json', 'utf-8'));
+
+const prerenderEntries = [
+	'*',
+	...courses.map((c) => `/course/${c.id}`),
+	...lessons.map((l) => `/lesson/${l.id}`),
+	...quizzes.map((q) => `/quiz/${q.id}`)
+];
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -22,26 +35,7 @@ const config = {
 		},
 		prerender: {
 			handleMissingId: 'warn',
-			entries: [
-				'*',
-				'/course/1',
-				'/course/2',
-				'/course/3',
-				'/lesson/1',
-				'/lesson/2',
-				'/lesson/3',
-				'/lesson/4',
-				'/lesson/5',
-				'/lesson/6',
-				'/lesson/7',
-				'/quiz/1',
-				'/quiz/2',
-				'/quiz/3',
-				'/quiz/4',
-				'/quiz/5',
-				'/quiz/6',
-				'/quiz/7'
-			]
+			entries: prerenderEntries
 		}
 	}
 };
