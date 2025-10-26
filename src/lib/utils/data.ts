@@ -1,4 +1,5 @@
 // Utility functions for loading JSON data files
+import { base } from '$app/paths';
 
 export interface Course {
 	id: number;
@@ -59,13 +60,13 @@ export interface QuizAnswer {
 
 // Load courses from JSON file
 export async function loadCourses(fetchFn: typeof fetch = fetch): Promise<Course[]> {
-	const response = await fetchFn('/data/courses.json');
+	const response = await fetchFn(`${base}/data/courses.json`);
 	return await response.json();
 }
 
 // Load all lessons from JSON file
 export async function loadLessons(fetchFn: typeof fetch = fetch): Promise<Lesson[]> {
-	const response = await fetchFn('/data/lessons.json');
+	const response = await fetchFn(`${base}/data/lessons.json`);
 	return await response.json();
 }
 
@@ -77,7 +78,7 @@ export async function loadLesson(id: number, fetchFn: typeof fetch = fetch): Pro
 
 // Load all quizzes from JSON file
 export async function loadQuizzes(fetchFn: typeof fetch = fetch): Promise<Quiz[]> {
-	const response = await fetchFn('/data/quizzes.json');
+	const response = await fetchFn(`${base}/data/quizzes.json`);
 	return await response.json();
 }
 
