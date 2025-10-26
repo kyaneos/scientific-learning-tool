@@ -23,7 +23,7 @@ jobs:
 
       - name: Build
         env:
-          BASE_PATH: ''
+          BASE_PATH: '/scientific-learning-tool'
           VITE_POCKETBASE_URL: 'https://sciminds.cloud'
         run: npm run build
 
