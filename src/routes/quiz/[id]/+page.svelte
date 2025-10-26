@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { goto } from '$app/navigation';
+	import { base } from '$app/paths';
 	import { pb } from '$lib/pocketbase';
 	import { auth } from '$lib/stores/auth.svelte';
 	import type { PageData } from './$types';
@@ -154,7 +155,7 @@
 					{/each}
 
 					<div class="card-actions justify-between mt-8">
-						<a href="/lesson/{data.quiz.lesson_id}" class="btn btn-outline">
+						<a href="{base}/lesson/{data.quiz.lesson_id}" class="btn btn-outline">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
 								class="h-5 w-5"
@@ -224,7 +225,7 @@
 								/>
 							</svg>
 							<span>
-								<a href="/register" class="link">Create an account</a> to save your quiz results and track
+								<a href="{base}/register" class="link">Create an account</a> to save your quiz results and track
 								your progress!
 							</span>
 						</div>
@@ -355,7 +356,7 @@
 						</button>
 
 						{#if data.quiz.next_lesson_id}
-							<a href="/lesson/{data.quiz.next_lesson_id}" class="btn btn-secondary">
+							<a href="{base}/lesson/{data.quiz.next_lesson_id}" class="btn btn-secondary">
 								Continue to Next Lesson
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
@@ -374,7 +375,7 @@
 							</a>
 						{/if}
 
-						<a href="/" class="btn btn-outline">
+						<a href="{base}/" class="btn btn-outline">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
 								class="h-5 w-5"

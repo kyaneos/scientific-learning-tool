@@ -1,3 +1,7 @@
+<script lang="ts">
+	import { base } from '$app/paths';
+</script>
+
 <svelte:head>
 	<title>About Us - Scientific Learning Tool</title>
 </svelte:head>
@@ -6,7 +10,7 @@
 	<!-- Brain Image -->
 	<div class="flex justify-center">
 		<img
-			src="/brain.jpg"
+			src="{base}/brain.jpg"
 			alt="Brain illustration"
 			class="rounded-lg shadow-xl max-w-md w-full object-cover"
 		/>

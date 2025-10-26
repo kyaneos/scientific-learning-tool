@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
+	import { base } from '$app/paths';
 	import { pb } from '$lib/pocketbase';
 	import { auth } from '$lib/stores/auth.svelte';
 	import type { PageData } from './$types';
@@ -53,7 +54,7 @@
 					{#if data.lesson.image}
 						<div class="mt-6">
 							<img
-								src="/svg/{data.lesson.image}"
+								src="{base}/svg/{data.lesson.image}"
 								alt={data.lesson.title}
 								class="mx-auto max-h-64"
 							/>
@@ -73,7 +74,7 @@
 			{#if section.image}
 				<div class="not-prose my-6">
 					<img
-						src="/svg/{section.image}"
+						src="{base}/svg/{section.image}"
 						alt={section.title}
 						class="mx-auto max-h-80 rounded-lg"
 					/>
@@ -158,7 +159,7 @@
 		<div class="flex justify-between items-center gap-4">
 			<div>
 				{#if data.prevLesson}
-					<a href="/lesson/{data.prevLesson.id}" class="btn btn-outline">
+					<a href="{base}/lesson/{data.prevLesson.id}" class="btn btn-outline">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							class="h-5 w-5"
@@ -180,7 +181,7 @@
 
 			<div class="flex gap-2">
 				{#if data.lesson.quiz_id}
-					<a href="/quiz/{data.lesson.quiz_id}" class="btn btn-secondary">
+					<a href="{base}/quiz/{data.lesson.quiz_id}" class="btn btn-secondary">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							class="h-5 w-5"
@@ -202,7 +203,7 @@
 
 			<div>
 				{#if data.nextLesson}
-					<a href="/lesson/{data.nextLesson.id}" class="btn btn-primary">
+					<a href="{base}/lesson/{data.nextLesson.id}" class="btn btn-primary">
 						Next Lesson
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
@@ -220,7 +221,7 @@
 						</svg>
 					</a>
 				{:else}
-					<a href="/" class="btn btn-outline">
+					<a href="{base}/" class="btn btn-outline">
 						Back to Home
 					</a>
 				{/if}

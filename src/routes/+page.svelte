@@ -1,6 +1,7 @@
 <script lang="ts">
 	import CourseCard from '$lib/components/CourseCard.svelte';
 	import { auth } from '$lib/stores/auth.svelte';
+	import { base } from '$app/paths';
 	import type { PageData } from './$types';
 
 	let { data }: { data: PageData } = $props();
@@ -18,7 +19,7 @@
 	<!-- Hero Section -->
 	<div class="hero bg-base-200 rounded-box p-8">
 		<div class="hero-content flex-col lg:flex-row-reverse">
-			<img src="/svg/dual_processing.svg" alt="Dual Processing Theory" class="max-w-sm rounded-lg" />
+			<img src="{base}/svg/dual_processing.svg" alt="Dual Processing Theory" class="max-w-sm rounded-lg" />
 			<div>
 				<h1 class="text-5xl font-bold">Welcome to the Scientific Learning Tool</h1>
 				<p class="py-6 text-xl">
@@ -47,7 +48,7 @@
 						Start Learning
 					</a>
 					{#if !auth.isAuthenticated}
-						<a href="/register" class="btn btn-outline">
+						<a href="{base}/register" class="btn btn-outline">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
 								class="h-5 w-5"
@@ -97,7 +98,7 @@
 				</p>
 				<div class="card-actions justify-end mt-4">
 					{#if auth.isAuthenticated}
-						<a href="/progress" class="btn btn-primary">
+						<a href="{base}/progress" class="btn btn-primary">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
 								class="h-5 w-5"
@@ -115,7 +116,7 @@
 							View Your Progress
 						</a>
 					{:else}
-						<a href="/login" class="btn btn-primary">
+						<a href="{base}/login" class="btn btn-primary">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
 								class="h-5 w-5"

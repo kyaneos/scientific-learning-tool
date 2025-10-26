@@ -151,7 +151,7 @@
 			<div class="text-center">
 				<p class="text-sm">
 					Already have an account?
-					<a href="/login" class="link link-primary">Login here</a>
+					<a href="{base}/login" class="link link-primary">Login here</a>
 				</p>
 			</div>
 		</div>

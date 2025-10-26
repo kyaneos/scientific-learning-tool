@@ -91,7 +91,7 @@
 			<div class="text-center">
 				<p class="text-sm">
 					Don't have an account?
-					<a href="/register" class="link link-primary">Register here</a>
+					<a href="{base}/register" class="link link-primary">Register here</a>
 				</p>
 			</div>
 		</div>

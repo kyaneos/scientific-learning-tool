@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { goto } from '$app/navigation';
+	import { base } from '$app/paths';
 	import { Chart, registerables } from 'chart.js';
 	import { auth } from '$lib/stores/auth.svelte';
 	import { pb } from '$lib/pocketbase';
@@ -200,7 +201,7 @@
 							{#each progress.slice(0, 5) as prog}
 								{@const lesson = lessonsData.find((l) => l.id === prog.lesson_id)}
 								{#if lesson}
-									<a href="/lesson/{lesson.id}" class="block p-3 hover:bg-base-300 rounded-lg transition">
+									<a href="{base}/lesson/{lesson.id}" class="block p-3 hover:bg-base-300 rounded-lg transition">
 										<div class="flex items-center justify-between">
 											<div>
 												<h3 class="font-semibold">{lesson.title}</h3>
@@ -229,7 +230,7 @@
 						</div>
 					{:else}
 						<p class="text-base-content/70">No lessons viewed yet. Start learning!</p>
-						<a href="/" class="btn btn-primary mt-4">Browse Courses</a>
+						<a href="{base}/" class="btn btn-primary mt-4">Browse Courses</a>
 					{/if}
 				</div>
 			</div>
@@ -269,7 +270,7 @@
 						</div>
 					{:else}
 						<p class="text-base-content/70">No quizzes taken yet. Test your knowledge!</p>
-						<a href="/" class="btn btn-secondary mt-4">Start a Quiz</a>
+						<a href="{base}/" class="btn btn-secondary mt-4">Start a Quiz</a>
 					{/if}
 				</div>
 			</div>

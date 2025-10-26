@@ -20,6 +20,30 @@
 - Document and update DEVELOPMENT_LOG.md as needed. Periodically check and update.
 - When pushing to GitHub, do not include the default "created with the help of Claude Code" or any adjacent messages.
 - Don't use emojis in web app.
+- Expect more courses and lessons in the future, so don't hardcode entries. Dynamic solutions should automatically scale with new content, eliminate manual maintenance, and prevent errors from forgetting to update the config.
+
+## GitHub Pages Deployment Rules
+
+**CRITICAL**: This site deploys to GitHub Pages at `/scientific-learning-tool` subdirectory, NOT the root domain. ALL paths must account for this:
+
+- **ALWAYS use `base` from `$app/paths`** for internal links and asset paths
+  - Links: `<a href="{base}/about">` NOT `<a href="/about">`
+  - Images: `<img src="{base}/svg/logo.svg">` NOT `<img src="/svg/logo.svg">`
+  - Data fetching: `` fetch(`${base}/data/courses.json`) `` NOT `fetch('/data/courses.json')`
+  - Redirects: `` window.location.href = `${base}/` `` NOT `window.location.href = '/'`
+
+- **Import base path at top of every component/page that uses links or assets:**
+  ```typescript
+  import { base } from '$app/paths';
+  ```
+
+- **Static Site Configuration:**
+  - This is a client-side only app (no SSR) deployed to GitHub Pages
+  - `src/routes/+layout.ts` has `export const ssr = false` and `export const prerender = true`
+  - NO `+page.server.ts`, `+layout.server.ts`, or `hooks.server.ts` files - these break static builds
+  - All auth and data fetching happens client-side using PocketBase
+
+- **Testing locally:** In dev mode, `base` is empty string (''), in production it's '/scientific-learning-tool'
 
 # ALWAYS FOLLOW THESE DEVELOPMENT RULES
 

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import type { PageData } from './$types';
 
 	let { data }: { data: PageData } = $props();
@@ -14,7 +15,7 @@
 	<div class="hero bg-base-200 rounded-box p-8">
 		<div class="hero-content flex-col lg:flex-row">
 			<img
-				src="/svg/{data.course.image}"
+				src="{base}/svg/{data.course.image}"
 				alt={data.course.title}
 				class="max-w-sm rounded-lg shadow-2xl"
 			/>
@@ -33,7 +34,7 @@
 		<h2 class="text-3xl font-bold mb-6">Course Lessons</h2>
 		<div class="grid gap-4">
 			{#each data.lessons as lesson, index}
-				<a href="/lesson/{lesson.id}" class="card bg-base-100 shadow-lg hover:shadow-xl transition-shadow">
+				<a href="{base}/lesson/{lesson.id}" class="card bg-base-100 shadow-lg hover:shadow-xl transition-shadow">
 					<div class="card-body">
 						<div class="flex items-start gap-4">
 							<div class="flex-shrink-0">
@@ -73,7 +74,7 @@
 
 	<!-- Back to Home -->
 	<div class="text-center">
-		<a href="/" class="btn btn-outline">
+		<a href="{base}/" class="btn btn-outline">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				class="h-5 w-5"
