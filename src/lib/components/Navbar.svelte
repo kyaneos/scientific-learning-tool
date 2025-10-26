@@ -54,7 +54,7 @@
 		<ul class="menu menu-horizontal px-1">
 			<li><a href="{base}/">Home</a></li>
 			<li class="dropdown dropdown-hover">
-				<div tabindex="0" role="button" class="btn btn-ghost">Courses</div>
+				<a tabindex="0" role="button">Courses</a>
 				<ul class="dropdown-content menu bg-base-100 rounded-box z-[1] p-2 shadow w-64">
 					<li><a href="{base}/course/1">Scientific Method</a></li>
 					<li><a href="{base}/course/2">Research Methods in Psychology</a></li>
